@@ -9,21 +9,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func continueTapped(_ sender: Any) {
+        let model = NetworkModel()  // inicializamos la clase
+        model.login(   // inicializamos metodo login
+            user: usernameTextField.text ?? "",  //por si fuese nulo damos valor por defecto ""
+            password: passwordTextField.text ?? "")
+        { token, error in
+            print("Token: \(token), error: \(error)")
+            }
     }
-    */
+    
 
 }

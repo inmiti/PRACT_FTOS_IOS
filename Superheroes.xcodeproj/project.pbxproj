@@ -12,6 +12,8 @@
 		1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D1EDE2A9D41D200F2E932 /* ViewController.swift */; };
 		1F0D1EE42A9D41D400F2E932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D1EE32A9D41D400F2E932 /* Assets.xcassets */; };
 		1F0D1EE72A9D41D400F2E932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D1EE52A9D41D400F2E932 /* LaunchScreen.storyboard */; };
+		1FCE2D902AC174B70078D423 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2D8F2AC174B70078D423 /* NetworkModel.swift */; };
+		1FCE2D922AC1EF2F0078D423 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2D912AC1EF2F0078D423 /* Hero.swift */; };
 		1FDCA55F2AC0976E002C4559 /* XiBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCA55D2AC0976E002C4559 /* XiBViewController.swift */; };
 		1FDCA5602AC0976E002C4559 /* XiBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCA55E2AC0976E002C4559 /* XiBViewController.xib */; };
 		1FDCA5662AC0ABB2002C4559 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCA5642AC0ABB2002C4559 /* LoginViewController.swift */; };
@@ -26,6 +28,8 @@
 		1F0D1EE32A9D41D400F2E932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F0D1EE62A9D41D400F2E932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F0D1EE82A9D41D500F2E932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FCE2D8F2AC174B70078D423 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		1FCE2D912AC1EF2F0078D423 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1FDCA55D2AC0976E002C4559 /* XiBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiBViewController.swift; sourceTree = "<group>"; };
 		1FDCA55E2AC0976E002C4559 /* XiBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XiBViewController.xib; sourceTree = "<group>"; };
 		1FDCA5642AC0ABB2002C4559 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 		1F0D1ED92A9D41D200F2E932 /* Superheroes */ = {
 			isa = PBXGroup;
 			children = (
+				1FCE2D8E2AC174040078D423 /* Models */,
 				1FDCA5632AC0AB7C002C4559 /* Login */,
 				1F0D1EDA2A9D41D200F2E932 /* AppDelegate.swift */,
 				1F0D1EDC2A9D41D200F2E932 /* SceneDelegate.swift */,
@@ -73,6 +78,15 @@
 				1FDCA55E2AC0976E002C4559 /* XiBViewController.xib */,
 			);
 			path = Superheroes;
+			sourceTree = "<group>";
+		};
+		1FCE2D8E2AC174040078D423 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1FCE2D8F2AC174B70078D423 /* NetworkModel.swift */,
+				1FCE2D912AC1EF2F0078D423 /* Hero.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1FDCA5632AC0AB7C002C4559 /* Login */ = {
@@ -156,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCE2D902AC174B70078D423 /* NetworkModel.swift in Sources */,
 				1FDCA55F2AC0976E002C4559 /* XiBViewController.swift in Sources */,
 				1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */,
 				1F0D1EDB2A9D41D200F2E932 /* AppDelegate.swift in Sources */,
+				1FCE2D922AC1EF2F0078D423 /* Hero.swift in Sources */,
 				1FDCA5662AC0ABB2002C4559 /* LoginViewController.swift in Sources */,
 				1F0D1EDD2A9D41D200F2E932 /* SceneDelegate.swift in Sources */,
 			);
