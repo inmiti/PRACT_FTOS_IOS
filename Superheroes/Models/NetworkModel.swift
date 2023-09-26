@@ -111,5 +111,9 @@ final class NetworkModel {
         task.resume()
     }
     
+    func getTransformations(for hero: Hero, completion: (Result<[Transformation], NetworkError) -> Void){
+        
+    }
+    
     
 }

@@ -14,3 +14,7 @@ struct Hero: Decodable {
     let photo: URL
     let favorite: Bool 
 }
+
+struct Transformation {
+    
+}

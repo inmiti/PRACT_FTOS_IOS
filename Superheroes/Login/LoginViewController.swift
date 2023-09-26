@@ -25,16 +25,25 @@ class LoginViewController: UIViewController {
         model.login(   // inicializamos metodo login
             user: usernameTextField.text ?? "",  //por si fuese nulo damos valor por defecto ""
             password: passwordTextField.text ?? "")
-        { token, error in
-            print("Token: \(token), error: \(error)")
+        { result in
+            switch result {
+            case let .success(token):
+                print("Token: \(token)")
+//                model.getHeroes (token: token) { result in      // No hacer esto en la práctica revisar lo que puedo quitar
+//                    switch result {
+//                    case let .success(heroes):
+//                        print("Heroes: \(heroes)")
+//
+//                    case let .failure(error):
+//                        print("Error: \(error)")
+//
+//                    }
+//                }
+            case let .failure(error):
+                print("Error: \(error)")
+            }
             
-            guard let token else {
-                return
-            }
-            model.getHeroes (token: token) { heroes, error in
-                print("Heroes: \(heroes), error: \(error)")
-            }
-            }
+        }
     }
     
 
