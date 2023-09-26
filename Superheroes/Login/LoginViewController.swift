@@ -27,6 +27,13 @@ class LoginViewController: UIViewController {
             password: passwordTextField.text ?? "")
         { token, error in
             print("Token: \(token), error: \(error)")
+            
+            guard let token else {
+                return
+            }
+            model.getHeroes (token: token) { heroes, error in
+                print("Heroes: \(heroes), error: \(error)")
+            }
             }
     }
     
