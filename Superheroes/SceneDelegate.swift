@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
+// - Indicamos que el LoginViewController va a ser nuestro entry point
         guard let scene = (scene as? UIWindowScene) else {
             return
         }

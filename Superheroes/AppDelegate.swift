@@ -10,12 +10,20 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    var window2: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        let heroesViewController = HeroesViewController()
+//        let navigationController = UINavigationController(rootViewController: heroesViewController)
+//
+//        self.window2 = UIWindow(frame: UIScreen.main.bounds)
+//        self.window2?.rootViewController = navigationController
+//        self.window2?.makeKeyAndVisible()
+        
+        
         return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

@@ -1,16 +1,17 @@
 //
-//  XiBViewController.swift
+//  HeroesViewController.swift
 //  Superheroes
 //
-//  Created by ibautista on 24/9/23.
+//  Created by ibautista on 26/9/23.
 //
 
 import UIKit
 
-class XiBViewController: UIViewController {
+class HeroesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("listado de héroes viewdidLoad")
 
         // Do any additional setup after loading the view.
     }
