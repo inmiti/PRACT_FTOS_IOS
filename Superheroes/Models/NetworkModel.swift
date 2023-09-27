@@ -12,6 +12,7 @@ final class NetworkModel {
         case unknown
         case malformedUrl
         case deCodingFailed
+        case encodingFailed
         case noData
         case statusCode(code: Int?)
         case noToken
@@ -111,9 +112,71 @@ final class NetworkModel {
         task.resume()
     }
     
-    func getTransformations(for hero: Hero, completion: (Result<[Transformation], NetworkError>) -> Void){
+    func getTransformations(for hero: Hero,
+                            token: String,
+                            completion: @escaping (Result<[Transformation], NetworkError>) -> Void)
+    {
+        var components = baseComponents
+        components.path = "/api/heros/tranformations"
+        
+        guard let url = components.url else {
+            completion(.failure(.malformedUrl))
+            return
+        }
+//        var urlComponents = URLComponents()
+        let body = getTransformationBody(id: hero.id)
+        guard let encodedBody = try? JSONEncoder().encode(body) else {
+            completion(.failure(.encodingFailed))
+            return
+        }
+        
+//        urlComponents.queryItems = [URLQueryItem(name: "id", value: hero.id)]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+//        request.httpBody = urlComponents.query?.data(using: .utf8)
+        request.httpBody = encodedBody
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                completion(.failure(.unknown))
+                return
+            }
+            guard let data else {
+                completion(.failure(.noData))
+                return
+            }
+            guard let transformations = try? JSONDecoder().decode([Transformation].self, from: data) else {
+                completion(.failure(.deCodingFailed))
+                return
+            }
+            completion(.success(transformations))
+        }
+        task.resume()
         
     }
-    
+    func createTask<T: Decodable> (
+        for request: URLRequest,
+        using type: T.Type, // Importante pasar .Type para que nos de el tipo, si no lo indicamos nos da la referencia al objeto.
+        completion: @escaping (Result<T, NetworkError>) -> Void
+    ) {
+        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+            guard error == nil else {
+                completion(.failure(.unknown))
+                return
+            }
+            guard let data else {
+                completion(.failure(.noData))
+                return
+            }
+            guard let resource = try? JSONDecoder().decode(type, from: data) else {
+                completion(.failure(.deCodingFailed))
+                return
+            }
+            completion(.success(resource))
+        }
+        task.resume()
+        }
+
     
 }

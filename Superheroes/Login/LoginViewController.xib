@@ -86,7 +86,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1mn-6s-qhI" secondAttribute="trailing" constant="12" id="opf-am-cUx"/>
                 <constraint firstItem="1mn-6s-qhI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="tnw-H6-il3"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="20"/>
+            <point key="canvasLocation" x="430" y="6"/>
         </view>
     </objects>
     <resources>

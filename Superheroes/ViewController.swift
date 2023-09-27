@@ -18,9 +18,5 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-//    @IBAction func didTapXiB(_ sender: Any) {
-//        let viewController = XiBViewController() // inicializamos nuestro viewController
-//        navigationController?.showDetailViewController(viewController, sender: nil)  //metodo show para navegar al xib
-//    }
 }
 

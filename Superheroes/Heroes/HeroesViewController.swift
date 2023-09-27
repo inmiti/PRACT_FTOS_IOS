@@ -2,7 +2,7 @@
 //  HeroesViewController.swift
 //  Superheroes
 //
-//  Created by ibautista on 26/9/23.
+//  Created by ibautista on 27/9/23.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class HeroesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("listado de héroes viewdidLoad")
+        print("listado de heroes")
 
         // Do any additional setup after loading the view.
     }

@@ -28,22 +28,35 @@ class LoginViewController: UIViewController {
             switch result {
             case let .success(token):
                 print("Token: \(token)")
-//                DispatchQueue.main.async {
-                let heroesviewController = HeroesViewController() // inicializamos nuestro viewController
-                self.navigationController?.showDetailViewController(heroesviewController, sender: nil)  //metodo show para navegar al listado de Heroes
-//                }
+                DispatchQueue.main.async {
+                    let heroesviewController = HeroesViewController() // inicializamos nuestro viewController
+                    self.navigationController?.showDetailViewController(heroesviewController, sender: nil)  //metodo show para navegar al listado de Heroes
+                }
                 // En el controlador de vista de inicio de sesión
                 
-//                model.getHeroes (token: token) { result in      // No hacer esto en la práctica revisar lo que puedo quitar
-//                    switch result {
-//                    case let .success(heroes):
-//                        print("Heroes: \(heroes)")
-//
-//                    case let .failure(error):
-//                        print("Error: \(error)")
-//
-//                    }
-//                }
+                model.getHeroes (token: token) { result in      // No hacer esto en la práctica revisar lo que puedo quitar
+                    switch result {
+                        case let .success(heroes):
+                            print("Heroes: \(heroes)")
+                            
+                            let goku = heroes[3]
+                            model.getTransformations(
+                                for: goku,
+                                token: token) { result in
+                                    switch result {
+                                        case let .success(transformations):
+                                            print("Transformations: \(transformations)")
+                                        case let .failure(error):
+                                            print("Error: \(error)")
+                            
+                                }
+                        }
+                        
+                        case let .failure(error):
+                            print("Error: \(error)")
+
+                    }
+                }
             case let .failure(error):
                 print("Error: \(error)")
             }

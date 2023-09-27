@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -22,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         let window = UIWindow(windowScene: scene)
-        let viewController = LoginViewController() // Creamos viewController
+        let viewController = UINavigationController(rootViewController: LoginViewController()) // Creamos viewController con navegacion
         window.rootViewController = viewController // Presentamos el viewController en nuestra window
         window.makeKeyAndVisible() // Hacemos visible la window
         self.window = window // Agregamos referencia, manteniendo nuestra window a esta window

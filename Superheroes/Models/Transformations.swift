@@ -1,18 +1,17 @@
 //
-//  Hero.swift
+//  Transformations.swift
 //  Superheroes
 //
-//  Created by ibautista on 25/9/23.
+//  Created by ibautista on 27/9/23.
 //
 
 import Foundation
 
-struct Hero: Decodable {
+struct Transformation: Decodable {
     let id: String
     let name: String
     let description: String
     let photo: URL
-    let favorite: Bool 
+    let hero: Hero
+    
 }
-
-

@@ -8,30 +8,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesViewController" customModule="Superheroes" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesViewController" customModule="Superheroes" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="ch4-5d-CP9" customClass="HeroesViewController" customModule="Superheroes" customModuleProvider="target">
-            <view key="view" contentMode="scaleToFill" id="Opx-Lu-nko">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de heroes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-2p-7Q0">
-                        <rect key="frame" x="12" y="415.66666666666669" width="369" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <viewLayoutGuide key="safeArea" id="GbW-5e-vYd"/>
-                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                <constraints>
-                    <constraint firstItem="GbW-5e-vYd" firstAttribute="trailing" secondItem="FTG-2p-7Q0" secondAttribute="trailing" constant="12" id="8az-xy-EK4"/>
-                    <constraint firstItem="FTG-2p-7Q0" firstAttribute="centerY" secondItem="Opx-Lu-nko" secondAttribute="centerY" id="CFJ-SL-luo"/>
-                    <constraint firstItem="FTG-2p-7Q0" firstAttribute="leading" secondItem="GbW-5e-vYd" secondAttribute="leading" constant="12" id="duH-07-yvN"/>
-                </constraints>
-            </view>
-            <point key="canvasLocation" x="-776" y="-62"/>
-        </viewController>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listado de heroes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgF-W9-fUx">
+                    <rect key="frame" x="12" y="415.66666666666669" width="369" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AgF-W9-fUx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0zF-kA-1sq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AgF-W9-fUx" secondAttribute="trailing" constant="12" id="aP7-6a-FJU"/>
+                <constraint firstItem="AgF-W9-fUx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="fsU-ha-Ewc"/>
+            </constraints>
+            <point key="canvasLocation" x="228" y="44"/>
+        </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
