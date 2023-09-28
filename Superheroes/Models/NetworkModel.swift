@@ -94,22 +94,7 @@ final class NetworkModel {
         request.httpMethod = "POST"  //Le damos el tipo de metodo, en nuestra api es un POST
         request.httpBody = urlComponents.query?.data(using: .utf8) // httpBody espera un data, por eso le pasamos .data query hace composicion de todas las query pasadas, en nuestro caso es solo 1
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")// Pasar header a nuestra request para autentificarnos
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in  //Obtener datos de la api
-            guard error == nil else {  //Comprobamos que no hay errores
-                completion(.failure(.unknown) )
-                return
-            }
-            guard let data else {  //Comprobamos que hay data
-                completion(.failure(.noData))
-                return
-            }
-            guard let heroes = try? JSONDecoder().decode([Hero].self, from: data) else {   // vamos a decodificar nuestro array de heroes desde el objeto data
-                completion(.failure(.deCodingFailed))
-                return
-            }
-            completion(.success(heroes))
-        }
-        task.resume()
+        createTask(for: request , using: [Hero].self, completion: completion)
     }
     
     func getTransformations(for hero: Hero,
@@ -118,65 +103,50 @@ final class NetworkModel {
     {
         var components = baseComponents
         components.path = "/api/heros/tranformations"
-        
+
         guard let url = components.url else {
             completion(.failure(.malformedUrl))
             return
         }
-//        var urlComponents = URLComponents()
-        let body = getTransformationBody(id: hero.id)
-        guard let encodedBody = try? JSONEncoder().encode(body) else {
-            completion(.failure(.encodingFailed))
-            return
-        }
-        
-//        urlComponents.queryItems = [URLQueryItem(name: "id", value: hero.id)]
-        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: hero.id)]
+        print("id: \(hero.id), tipo:", type(of: hero.id))
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-//        request.httpBody = urlComponents.query?.data(using: .utf8)
-        request.httpBody = encodedBody
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.unknown))
-                return
-            }
-            guard let data else {
-                completion(.failure(.noData))
-                return
-            }
-            guard let transformations = try? JSONDecoder().decode([Transformation].self, from: data) else {
-                completion(.failure(.deCodingFailed))
-                return
-            }
-            completion(.success(transformations))
-        }
-        task.resume()
-        
+        request.httpBody = urlComponents.query?.data(using: .utf8)
+        createTask(
+            for: request,
+            using: [Transformation].self,
+            completion: completion)
     }
+    
     func createTask<T: Decodable> (
         for request: URLRequest,
         using type: T.Type, // Importante pasar .Type para que nos de el tipo, si no lo indicamos nos da la referencia al objeto.
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {
         let task = URLSession.shared.dataTask(with: request) {data, response, error in
+            let result: Result<T, NetworkError>
+            
+            defer {
+                completion(result)   // es lo ultimo, ejecuta el completion  con el .success.
+            }
             guard error == nil else {
-                completion(.failure(.unknown))
+                result = .failure(.unknown)
                 return
             }
             guard let data else {
-                completion(.failure(.noData))
+                result = .failure(.noData)
                 return
             }
             guard let resource = try? JSONDecoder().decode(type, from: data) else {
-                completion(.failure(.deCodingFailed))
+                result = .failure(.deCodingFailed)
                 return
             }
-            completion(.success(resource))
+            
+            result = .success(resource)
         }
         task.resume()
         }
-
-    
 }
