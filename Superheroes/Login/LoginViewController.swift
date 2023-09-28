@@ -34,15 +34,14 @@ class LoginViewController: UIViewController {
                     self?.navigationController?.showDetailViewController(heroesviewController, sender: nil)  //metodo show para navegar al listado de Heroes
                 }
                 // En el controlador de vista de inicio de sesión
-                self?.model.getHeroes (token: token) { result in      // No hacer esto en la práctica revisar lo que puedo quitar
+                self?.model.getHeroes { result in      // No hacer esto en la práctica revisar lo que puedo quitar
                     switch result {
                         case let .success(heroes):
                             print("Heroes: \(heroes)")
 
                             let goku = heroes[3]
                             self?.model.getTransformations(
-                                for: goku,
-                                token: token
+                                for: goku
                             ) { result in
                                 switch result {
                                     case let .success(transformations):

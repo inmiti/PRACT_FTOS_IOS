@@ -16,11 +16,24 @@
 		1F8B29DE2AC4210800F2F914 /* HeroesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */; };
 		1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29E32AC4462400F2F914 /* Transformations.swift */; };
 		1F8B29E62AC4496A00F2F914 /* GetTransformationBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */; };
+		1FC3353C2AC562CF00760050 /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC3353B2AC562CF00760050 /* LocalDataModel.swift */; };
+		1FC335442AC57F8B00760050 /* SuperheroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC335432AC57F8B00760050 /* SuperheroesTests.swift */; };
+		1FC3354B2AC5814700760050 /* NetworkModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC3354A2AC5814700760050 /* NetworkModelTests.swift */; };
 		1FCE2D902AC174B70078D423 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2D8F2AC174B70078D423 /* NetworkModel.swift */; };
 		1FCE2D922AC1EF2F0078D423 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2D912AC1EF2F0078D423 /* Hero.swift */; };
 		1FDCA5662AC0ABB2002C4559 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCA5642AC0ABB2002C4559 /* LoginViewController.swift */; };
 		1FDCA5672AC0ABB2002C4559 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCA5652AC0ABB2002C4559 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FC335452AC57F8B00760050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F0D1ECF2A9D41D200F2E932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F0D1ED62A9D41D200F2E932;
+			remoteInfo = Superheroes;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1F0D1ED72A9D41D200F2E932 /* Superheroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superheroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +47,10 @@
 		1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesViewController.xib; sourceTree = "<group>"; };
 		1F8B29E32AC4462400F2F914 /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
 		1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransformationBody.swift; sourceTree = "<group>"; };
+		1FC3353B2AC562CF00760050 /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
+		1FC335412AC57F8B00760050 /* SuperheroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperheroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC335432AC57F8B00760050 /* SuperheroesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroesTests.swift; sourceTree = "<group>"; };
+		1FC3354A2AC5814700760050 /* NetworkModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelTests.swift; sourceTree = "<group>"; };
 		1FCE2D8F2AC174B70078D423 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		1FCE2D912AC1EF2F0078D423 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1FDCA5642AC0ABB2002C4559 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +59,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1F0D1ED42A9D41D200F2E932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FC3353E2AC57F8B00760050 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0D1ED92A9D41D200F2E932 /* Superheroes */,
+				1FC335422AC57F8B00760050 /* SuperheroesTests */,
 				1F0D1ED82A9D41D200F2E932 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0D1ED72A9D41D200F2E932 /* Superheroes.app */,
+				1FC335412AC57F8B00760050 /* SuperheroesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +118,15 @@
 			path = Superheroes;
 			sourceTree = "<group>";
 		};
+		1FC335422AC57F8B00760050 /* SuperheroesTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FC335432AC57F8B00760050 /* SuperheroesTests.swift */,
+				1FC3354A2AC5814700760050 /* NetworkModelTests.swift */,
+			);
+			path = SuperheroesTests;
+			sourceTree = "<group>";
+		};
 		1FCE2D8E2AC174040078D423 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +134,7 @@
 				1FCE2D912AC1EF2F0078D423 /* Hero.swift */,
 				1F8B29E32AC4462400F2F914 /* Transformations.swift */,
 				1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */,
+				1FC3353B2AC562CF00760050 /* LocalDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +168,24 @@
 			productReference = 1F0D1ED72A9D41D200F2E932 /* Superheroes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1FC335402AC57F8B00760050 /* SuperheroesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FC335472AC57F8B00760050 /* Build configuration list for PBXNativeTarget "SuperheroesTests" */;
+			buildPhases = (
+				1FC3353D2AC57F8B00760050 /* Sources */,
+				1FC3353E2AC57F8B00760050 /* Frameworks */,
+				1FC3353F2AC57F8B00760050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FC335462AC57F8B00760050 /* PBXTargetDependency */,
+			);
+			name = SuperheroesTests;
+			productName = SuperheroesTests;
+			productReference = 1FC335412AC57F8B00760050 /* SuperheroesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,6 +198,10 @@
 				TargetAttributes = {
 					1F0D1ED62A9D41D200F2E932 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					1FC335402AC57F8B00760050 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1F0D1ED62A9D41D200F2E932;
 					};
 				};
 			};
@@ -161,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				1F0D1ED62A9D41D200F2E932 /* Superheroes */,
+				1FC335402AC57F8B00760050 /* SuperheroesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +236,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FC3353F2AC57F8B00760050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -187,6 +253,7 @@
 				1FCE2D902AC174B70078D423 /* NetworkModel.swift in Sources */,
 				1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */,
 				1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */,
+				1FC3353C2AC562CF00760050 /* LocalDataModel.swift in Sources */,
 				1F8B29E62AC4496A00F2F914 /* GetTransformationBody.swift in Sources */,
 				1F0D1EDB2A9D41D200F2E932 /* AppDelegate.swift in Sources */,
 				1F8B29DD2AC4210800F2F914 /* HeroesViewController.swift in Sources */,
@@ -196,7 +263,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FC3353D2AC57F8B00760050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FC3354B2AC5814700760050 /* NetworkModelTests.swift in Sources */,
+				1FC335442AC57F8B00760050 /* SuperheroesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FC335462AC57F8B00760050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F0D1ED62A9D41D200F2E932 /* Superheroes */;
+			targetProxy = 1FC335452AC57F8B00760050 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F0D1EE52A9D41D400F2E932 /* LaunchScreen.storyboard */ = {
@@ -378,6 +462,42 @@
 			};
 			name = Release;
 		};
+		1FC335482AC57F8B00760050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z6336UHQ5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IBV.SuperheroesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Superheroes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Superheroes";
+			};
+			name = Debug;
+		};
+		1FC335492AC57F8B00760050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z6336UHQ5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IBV.SuperheroesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Superheroes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Superheroes";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -395,6 +515,15 @@
 			buildConfigurations = (
 				1F0D1EEC2A9D41D500F2E932 /* Debug */,
 				1F0D1EED2A9D41D500F2E932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FC335472AC57F8B00760050 /* Build configuration list for PBXNativeTarget "SuperheroesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FC335482AC57F8B00760050 /* Debug */,
+				1FC335492AC57F8B00760050 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

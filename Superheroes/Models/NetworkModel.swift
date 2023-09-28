@@ -24,7 +24,23 @@ final class NetworkModel {
         components.host = "dragonball.keepcoding.education"
         return components
     }
-    private var token: String?
+    private var token: String? {
+        get {   // Cuando se obtiene el token...
+            if let token = LocalDataModel.getToken() {
+                return token
+            }
+            return nil
+        }
+        set {  // Cuando obtenemos el valor del token no nil ....
+            if let token = newValue {
+                LocalDataModel.save(token: token)
+            }
+        }
+    }
+    private let session: URLSession  // Creamos esta coonstante y el inicializador para poder inyectar en los test el MockURLProtocol
+    init(session:URLSession = .shared) {
+        self.session = session
+    }
     
     func login(
         user:String,
@@ -46,7 +62,7 @@ final class NetworkModel {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let task = session.dataTask(with: request) { [weak self] data, response, error in
             guard error == nil else {
                 completion(.failure(.unknown))
                 return
@@ -72,7 +88,7 @@ final class NetworkModel {
         task.resume()
     }
     
-    func getHeroes(token: String,
+    func getHeroes(
                    completion: @escaping (Result<[Hero], NetworkError>) -> Void) {
         
         var components = baseComponents
@@ -82,10 +98,10 @@ final class NetworkModel {
             completion(.failure(.malformedUrl))       // si no está bien formada la url pasamos el error
             return
         }
-        /*guard let token else {  // Comprobación de que hay un token, si no lo hubiera da un error.
-            completion([],.noToken)
+        guard let token else {  // Comprobación de que hay un token, si no lo hubiera da un error.
+            completion(.failure(.noToken))
             return
-        }*/
+        }
         
         var urlComponents = URLComponents()   //Me ayuda a construir la url
         urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]  // propiedad queryItems va a ser un array de un tipo urlqueryitem, el cual le damos el body que espera la api: name: "" para poder obtener todos los heroes
@@ -98,7 +114,6 @@ final class NetworkModel {
     }
     
     func getTransformations(for hero: Hero,
-                            token: String,
                             completion: @escaping (Result<[Transformation], NetworkError>) -> Void)
     {
         var components = baseComponents
@@ -108,6 +123,12 @@ final class NetworkModel {
             completion(.failure(.malformedUrl))
             return
         }
+        
+        guard let token else {
+            completion(.failure(.noToken))
+            return
+        }
+        
         var urlComponents = URLComponents()
         urlComponents.queryItems = [URLQueryItem(name: "id", value: hero.id)]
         print("id: \(hero.id), tipo:", type(of: hero.id))
@@ -126,7 +147,7 @@ final class NetworkModel {
         using type: T.Type, // Importante pasar .Type para que nos de el tipo, si no lo indicamos nos da la referencia al objeto.
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+        let task = session.dataTask(with: request) {data, response, error in
             let result: Result<T, NetworkError>
             
             defer {
