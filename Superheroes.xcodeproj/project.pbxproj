@@ -12,6 +12,9 @@
 		1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D1EDE2A9D41D200F2E932 /* ViewController.swift */; };
 		1F0D1EE42A9D41D400F2E932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D1EE32A9D41D400F2E932 /* Assets.xcassets */; };
 		1F0D1EE72A9D41D400F2E932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D1EE52A9D41D400F2E932 /* LaunchScreen.storyboard */; };
+		1F6B893F2AC5D97900E7A114 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B893D2AC5D97900E7A114 /* DetailViewController.swift */; };
+		1F6B89402AC5D97900E7A114 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */; };
+		1F6B89422AC5DB8E00E7A114 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B89412AC5DB8E00E7A114 /* UIImage+Remote.swift */; };
 		1F8B29DD2AC4210800F2F914 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */; };
 		1F8B29DE2AC4210800F2F914 /* HeroesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */; };
 		1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29E32AC4462400F2F914 /* Transformations.swift */; };
@@ -43,6 +46,9 @@
 		1F0D1EE32A9D41D400F2E932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F0D1EE62A9D41D400F2E932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F0D1EE82A9D41D500F2E932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6B893D2AC5D97900E7A114 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1F6B89412AC5DB8E00E7A114 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
 		1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesViewController.xib; sourceTree = "<group>"; };
 		1F8B29E32AC4462400F2F914 /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				1FCE2D8E2AC174040078D423 /* Models */,
 				1FDCA5632AC0AB7C002C4559 /* Login */,
 				1F082B9D2AC3329900D52712 /* Heroes */,
+				1F6B893C2AC5D8F600E7A114 /* Detalle */,
 				1F0D1EDA2A9D41D200F2E932 /* AppDelegate.swift */,
 				1F0D1EDC2A9D41D200F2E932 /* SceneDelegate.swift */,
 				1F0D1EDE2A9D41D200F2E932 /* ViewController.swift */,
@@ -116,6 +123,15 @@
 				1F0D1EE82A9D41D500F2E932 /* Info.plist */,
 			);
 			path = Superheroes;
+			sourceTree = "<group>";
+		};
+		1F6B893C2AC5D8F600E7A114 /* Detalle */ = {
+			isa = PBXGroup;
+			children = (
+				1F6B893D2AC5D97900E7A114 /* DetailViewController.swift */,
+				1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */,
+			);
+			path = Detalle;
 			sourceTree = "<group>";
 		};
 		1FC335422AC57F8B00760050 /* SuperheroesTests */ = {
@@ -135,6 +151,7 @@
 				1F8B29E32AC4462400F2F914 /* Transformations.swift */,
 				1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */,
 				1FC3353B2AC562CF00760050 /* LocalDataModel.swift */,
+				1F6B89412AC5DB8E00E7A114 /* UIImage+Remote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 			files = (
 				1FDCA5672AC0ABB2002C4559 /* LoginViewController.xib in Resources */,
 				1F0D1EE72A9D41D400F2E932 /* LaunchScreen.storyboard in Resources */,
+				1F6B89402AC5D97900E7A114 /* DetailViewController.xib in Resources */,
 				1F8B29DE2AC4210800F2F914 /* HeroesViewController.xib in Resources */,
 				1F0D1EE42A9D41D400F2E932 /* Assets.xcassets in Resources */,
 			);
@@ -250,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6B893F2AC5D97900E7A114 /* DetailViewController.swift in Sources */,
 				1FCE2D902AC174B70078D423 /* NetworkModel.swift in Sources */,
 				1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */,
 				1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */,
@@ -260,6 +279,7 @@
 				1FCE2D922AC1EF2F0078D423 /* Hero.swift in Sources */,
 				1FDCA5662AC0ABB2002C4559 /* LoginViewController.swift in Sources */,
 				1F0D1EDD2A9D41D200F2E932 /* SceneDelegate.swift in Sources */,
+				1F6B89422AC5DB8E00E7A114 /* UIImage+Remote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

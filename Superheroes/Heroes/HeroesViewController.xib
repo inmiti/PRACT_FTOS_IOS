@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesViewController" customModule="Superheroes" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="846-BS-kOP" id="TyU-x0-dh6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,19 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listado de heroes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgF-W9-fUx">
-                    <rect key="frame" x="12" y="415.66666666666669" width="369" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="846-BS-kOP">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="AgF-W9-fUx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0zF-kA-1sq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AgF-W9-fUx" secondAttribute="trailing" constant="12" id="aP7-6a-FJU"/>
-                <constraint firstItem="AgF-W9-fUx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="fsU-ha-Ewc"/>
+                <constraint firstItem="846-BS-kOP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1tc-0l-8c4"/>
+                <constraint firstAttribute="bottom" secondItem="846-BS-kOP" secondAttribute="bottom" id="8n4-fZ-GiM"/>
+                <constraint firstItem="846-BS-kOP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="J4t-nO-5vQ"/>
+                <constraint firstItem="846-BS-kOP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oWL-AX-Mbt"/>
             </constraints>
             <point key="canvasLocation" x="228" y="44"/>
         </view>
