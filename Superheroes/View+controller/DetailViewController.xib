@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Superheroes" customModuleProvider="target">
             <connections>
+                <outlet property="HeroDescription" destination="Zpu-Dx-PIm" id="j4j-2x-lYt"/>
+                <outlet property="HeroName" destination="T7H-gV-Zdg" id="pMs-CH-TyU"/>
                 <outlet property="imageView" destination="5AL-vc-TYC" id="ozz-mP-OHx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-vc-TYC">
-                    <rect key="frame" x="0.0" y="71" width="393" height="200"/>
+                    <rect key="frame" x="0.0" y="12" width="393" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Qm7-vE-jdx"/>
                         <constraint firstAttribute="height" constant="200" id="mvW-l3-zWY"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTU-l6-hA0">
-                    <rect key="frame" x="76.666666666666686" y="744" width="240" height="44"/>
+                    <rect key="frame" x="76.666666666666686" y="778" width="240" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="rUd-SD-h63"/>
                         <constraint firstAttribute="width" constant="240" id="tCw-zu-T82"/>
@@ -41,7 +43,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-Dx-PIm">
-                    <rect key="frame" x="32" y="357.33333333333331" width="329" height="299.99999999999994"/>
+                    <rect key="frame" x="32" y="298.33333333333331" width="329" height="299.99999999999994"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="J7c-ea-x8H"/>
                     </constraints>
@@ -50,7 +52,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7H-gV-Zdg">
-                    <rect key="frame" x="32" y="295" width="117" height="26.333333333333314"/>
+                    <rect key="frame" x="32" y="236" width="117" height="26.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

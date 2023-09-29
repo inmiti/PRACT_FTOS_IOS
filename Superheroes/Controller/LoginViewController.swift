@@ -11,7 +11,6 @@ class LoginViewController: UIViewController {
     // - MARK: Outlets:
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var imageLoginView: UIImageView!
     
     // - MARK: Private let:
