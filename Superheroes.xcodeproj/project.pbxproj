@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F07FFC82AC6F0BC00E4BB82 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F07FFC72AC6F0BC00E4BB82 /* LoginViewController.xib */; };
+		1F07FFCA2AC720CA00E4BB82 /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFC92AC720CA00E4BB82 /* HeroesTableViewController.swift */; };
+		1F07FFD02AC7549500E4BB82 /* HeroesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F07FFCF2AC7549500E4BB82 /* HeroesViewController.xib */; };
 		1F0D1EDB2A9D41D200F2E932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D1EDA2A9D41D200F2E932 /* AppDelegate.swift */; };
 		1F0D1EDD2A9D41D200F2E932 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D1EDC2A9D41D200F2E932 /* SceneDelegate.swift */; };
 		1F0D1EDF2A9D41D200F2E932 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D1EDE2A9D41D200F2E932 /* ViewController.swift */; };
@@ -17,7 +19,6 @@
 		1F6B89402AC5D97900E7A114 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */; };
 		1F6B89422AC5DB8E00E7A114 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B89412AC5DB8E00E7A114 /* UIImage+Remote.swift */; };
 		1F8B29DD2AC4210800F2F914 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */; };
-		1F8B29DE2AC4210800F2F914 /* HeroesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */; };
 		1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29E32AC4462400F2F914 /* Transformations.swift */; };
 		1F8B29E62AC4496A00F2F914 /* GetTransformationBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */; };
 		1FC3353C2AC562CF00760050 /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC3353B2AC562CF00760050 /* LocalDataModel.swift */; };
@@ -42,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		1F07FFC72AC6F0BC00E4BB82 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1F07FFC92AC720CA00E4BB82 /* HeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
+		1F07FFCF2AC7549500E4BB82 /* HeroesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroesViewController.xib; path = ../../../../../../../Downloads/HeroesViewController.xib; sourceTree = "<group>"; };
 		1F0D1ED72A9D41D200F2E932 /* Superheroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superheroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0D1EDA2A9D41D200F2E932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F0D1EDC2A9D41D200F2E932 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +56,6 @@
 		1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		1F6B89412AC5DB8E00E7A114 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
 		1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
-		1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesViewController.xib; sourceTree = "<group>"; };
 		1F8B29E32AC4462400F2F914 /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
 		1F8B29E52AC4496A00F2F914 /* GetTransformationBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransformationBody.swift; sourceTree = "<group>"; };
 		1FC3353B2AC562CF00760050 /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
@@ -147,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				1F07FFC72AC6F0BC00E4BB82 /* LoginViewController.xib */,
+				1F07FFCF2AC7549500E4BB82 /* HeroesViewController.xib */,
 				1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */,
-				1F8B29DC2AC4210800F2F914 /* HeroesViewController.xib */,
 			);
 			path = "View+controller";
 			sourceTree = "<group>";
@@ -159,6 +161,7 @@
 				1FDCA5642AC0ABB2002C4559 /* LoginViewController.swift */,
 				1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */,
 				1F6B893D2AC5D97900E7A114 /* DetailViewController.swift */,
+				1F07FFC92AC720CA00E4BB82 /* HeroesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,10 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F07FFD02AC7549500E4BB82 /* HeroesViewController.xib in Resources */,
 				1F0D1EE72A9D41D400F2E932 /* LaunchScreen.storyboard in Resources */,
 				1F6B89402AC5D97900E7A114 /* DetailViewController.xib in Resources */,
 				1FE4B7B72AC6E02A00B58811 /* TableViewController.xib in Resources */,
-				1F8B29DE2AC4210800F2F914 /* HeroesViewController.xib in Resources */,
 				1F07FFC82AC6F0BC00E4BB82 /* LoginViewController.xib in Resources */,
 				1F0D1EE42A9D41D400F2E932 /* Assets.xcassets in Resources */,
 			);
@@ -274,6 +277,7 @@
 				1F8B29E42AC4462400F2F914 /* Transformations.swift in Sources */,
 				1FC3353C2AC562CF00760050 /* LocalDataModel.swift in Sources */,
 				1F8B29E62AC4496A00F2F914 /* GetTransformationBody.swift in Sources */,
+				1F07FFCA2AC720CA00E4BB82 /* HeroesTableViewController.swift in Sources */,
 				1F0D1EDB2A9D41D200F2E932 /* AppDelegate.swift in Sources */,
 				1F8B29DD2AC4210800F2F914 /* HeroesViewController.swift in Sources */,
 				1FCE2D922AC1EF2F0078D423 /* Hero.swift in Sources */,

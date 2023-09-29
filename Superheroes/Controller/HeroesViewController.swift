@@ -21,6 +21,8 @@ class HeroesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroTableViewCell") // Registra la celda personalizada HACER LUEGO
+
         title = "Listado de héroes"  // Titulo de viewController
         tableView.dataSource = self  // ponemos un dataSource que es self
         tableView.delegate = self  // ponemos undelegate que es self
@@ -63,8 +65,10 @@ extension HeroesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell() // Al no hacer una celda custom podemos hacerlo así
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "HeroTableViewCell", for: indexPath) //CELDA PERONALIZADA
         let heroe = heroes[indexPath.row] // pasamos el index de nuestra fila
         cell.textLabel?.text = heroe.name //Pasamos el nombre del país al que representamos
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
