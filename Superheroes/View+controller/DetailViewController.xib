@@ -39,6 +39,7 @@
                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                     </buttonConfiguration>
                     <connections>
+                        <action selector="TransformationsButton:" destination="-1" eventType="touchUpInside" id="TNI-cm-5yO"/>
                         <action selector="transformationButton:" destination="-1" eventType="touchUpInside" id="mAs-Tj-vUL"/>
                     </connections>
                 </button>

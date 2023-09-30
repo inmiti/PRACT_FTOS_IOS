@@ -46,9 +46,14 @@ class DetailViewController: UIViewController {
         imageView.setImage(for: url)
 
     }
-//MARK: - Actions
-//    @IBAction func transformationButton(_ sender: Any) {
+    @IBAction func TransformationsButton(_ sender: Any) {
+//        let tabBarViewController = TabBarViewController()
+//        let viewControllers:[UIViewController] = [tabBarViewController]
+//        navigationController?.setViewControllers(viewControllers, animated: true)
 //    }
+    //MARK: - Actions
+//    @IBAction func transformationButton(_ sender: Any) {
+    }
     
    
 

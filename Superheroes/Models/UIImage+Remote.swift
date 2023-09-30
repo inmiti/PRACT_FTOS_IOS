@@ -3,7 +3,8 @@
 //  Superheroes
 //
 //  Created by ibautista on 28/9/23.
-//
+
+// MARK: Conectar imagen con url
 
 import UIKit
 
