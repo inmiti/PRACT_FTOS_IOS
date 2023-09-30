@@ -16,20 +16,12 @@ class HeroTableViewCell: UITableViewCell {
     
     @IBOutlet weak var heroDescriptionLabel: UILabel!
     
-    func configure(with hero: String ) {
+    func configure(with hero: String, descripcion: String, url: URL) {
         heroNameLabel.text = hero
+        heroDescriptionLabel.text = descripcion
+        heroImage.setImage(for: url)
+    }
         
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-}

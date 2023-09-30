@@ -26,8 +26,9 @@ class HeroesViewController: UIViewController {
         title = "Listado de héroes"  // Titulo de viewController
         tableView.dataSource = self  // ponemos un dataSource que es self
         tableView.delegate = self  // ponemos undelegate que es self
+        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: HeroTableViewCell.identifier) // registramos la celda
+       
         tableView.isScrollEnabled = true
-
 //        tableView.alwaysBounceVertical = true // desactiva el efecto de hacer scroll cuando no hay mas filas
         
         model.getHeroes { [weak self] result in
@@ -41,17 +42,12 @@ class HeroesViewController: UIViewController {
                 print("Error: \(error)")
             }
         }
-        
-        
         }
-    
-        
+            
 //        guard let url = URL(string: "https://assets-prd.ignimgs.com/2022/01/14/gameofthrones-allseasons-sq-1642120207458.jpg")else {
 //            return
 //        }
 //        imageView.setImage(for: url)
-
-        
     }
 
 
@@ -64,11 +60,21 @@ extension HeroesViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell() // Al no hacer una celda custom podemos hacerlo así
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "HeroTableViewCell", for: indexPath) //CELDA PERONALIZADA
-        let heroe = heroes[indexPath.row] // pasamos el index de nuestra fila
-        cell.textLabel?.text = heroe.name //Pasamos el nombre del país al que representamos
-        cell.accessoryType = .disclosureIndicator
+// CASO CELDA NO CUSTOM:
+//        let cell = UITableViewCell() // Al no hacer una celda custom podemos hacerlo así
+//        let heroe = heroes[indexPath.row] // pasamos el index de nuestra fila
+//        cell.textLabel?.text = heroe.name //Pasamos el nombre del país al que representamos
+//        cell.accessoryType = .disclosureIndicator
+//
+//        CASO CELDA PERONALIZADA:
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: HeroTableViewCell.identifier,
+            for: indexPath)
+                as? HeroTableViewCell else {
+            return UITableViewCell()
+        }
+        let heroe = heroes[indexPath.row]
+        cell.configure(with: heroe.name, descripcion: heroe.description, url: heroe.photo)
         return cell
     }
 }

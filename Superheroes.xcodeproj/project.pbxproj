@@ -161,7 +161,6 @@
 				1F07FFC72AC6F0BC00E4BB82 /* LoginViewController.xib */,
 				1F07FFCF2AC7549500E4BB82 /* HeroesViewController.xib */,
 				1F6B893E2AC5D97900E7A114 /* DetailViewController.xib */,
-				1FB964522AC81A94009AEE72 /* HeroTableViewCell.swift */,
 				1FB964532AC81A94009AEE72 /* HeroTableViewCell.xib */,
 			);
 			path = "View+controller";
@@ -174,6 +173,7 @@
 				1F8B29DB2AC4210800F2F914 /* HeroesViewController.swift */,
 				1F6B893D2AC5D97900E7A114 /* DetailViewController.swift */,
 				1F07FFC92AC720CA00E4BB82 /* HeroesTableViewController.swift */,
+				1FB964522AC81A94009AEE72 /* HeroTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
