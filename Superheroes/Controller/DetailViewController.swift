@@ -15,16 +15,20 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var HeroName: UILabel!
     
-    @IBOutlet weak var HeroDescription: UILabel!
+    @IBOutlet weak var HeroDescription: UITextView!
+//    @IBOutlet weak var HeroDescription: UILabel!
     
 //   MARK: Variables
     private let heroe: String
-    private let descripcion: String = "Este es el mejor de todos"
+    private let descripcion: String
+    private let image: URL
     
-    init(heroe: String) {   //para pasar el modelo de heroe al viewControler, ceamos metodo inicializador
+    init(heroe: String,descripcion: String, image: URL ) {   //para pasar el modelo de heroe al viewControler, ceamos metodo inicializador
         self.heroe = heroe
-//        self.description = description
+        self.descripcion = descripcion
+        self.image = image
         super.init(nibName: nil, bundle: nil)  // el sabe el viewController que es DetailViewController, el paquete tambien lo sabe
+        
         
     }
     @available(*, unavailable)
@@ -39,11 +43,7 @@ class DetailViewController: UIViewController {
         title = heroe
         HeroName.text = heroe
         HeroDescription.text = descripcion
-        
-        guard let url = URL(string: "https://assets-prd.ignimgs.com/2022/01/14/gameofthrones-allseasons-sq-1642120207458.jpg")else {
-            return
-        }
-        imageView.setImage(for: url)
+        imageView.setImage(for: image)
 
     }
     @IBAction func TransformationsButton(_ sender: Any) {

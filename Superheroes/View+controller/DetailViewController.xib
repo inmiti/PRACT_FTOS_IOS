@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Superheroes" customModuleProvider="target">
             <connections>
-                <outlet property="HeroDescription" destination="Zpu-Dx-PIm" id="j4j-2x-lYt"/>
-                <outlet property="HeroName" destination="T7H-gV-Zdg" id="pMs-CH-TyU"/>
+                <outlet property="HeroDescription" destination="Ren-JH-GJm" id="9Ns-lW-Zzq"/>
+                <outlet property="HeroName" destination="soE-DH-kql" id="15I-uU-LDx"/>
                 <outlet property="imageView" destination="5AL-vc-TYC" id="ozz-mP-OHx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,62 +21,85 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-vc-TYC">
-                    <rect key="frame" x="0.0" y="12" width="393" height="200"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="58N-RU-fPE">
+                    <rect key="frame" x="0.0" y="59" width="393" height="751"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-vc-TYC">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="324"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-fZ-ijN">
+                            <rect key="frame" x="12" y="336" width="369" height="415"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="HeroName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soE-DH-kql">
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="47"/>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-S8-1FT">
+                                    <rect key="frame" x="0.0" y="59" width="369" height="300"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-JH-GJm" userLabel="HeroDescription">
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="300"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="leading" secondItem="1Ug-zh-4lF" secondAttribute="leading" id="1fz-Va-Cdd"/>
+                                        <constraint firstAttribute="height" constant="300" id="C8U-pO-gep"/>
+                                        <constraint firstItem="1Ug-zh-4lF" firstAttribute="bottom" secondItem="Ren-JH-GJm" secondAttribute="bottom" id="EcW-65-KOF"/>
+                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="top" secondItem="1Ug-zh-4lF" secondAttribute="top" id="JaX-Cn-OyB"/>
+                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="centerY" secondItem="bE8-S8-1FT" secondAttribute="centerY" id="Qme-4c-0YJ"/>
+                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="centerX" secondItem="bE8-S8-1FT" secondAttribute="centerX" id="aYm-M4-yBd"/>
+                                        <constraint firstItem="1Ug-zh-4lF" firstAttribute="trailing" secondItem="Ren-JH-GJm" secondAttribute="trailing" id="oaq-1S-cWX"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="contentLayoutGuide" id="1Ug-zh-4lF"/>
+                                    <viewLayoutGuide key="frameLayoutGuide" id="r0i-P0-lcg"/>
+                                </scrollView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-Vt-yD4">
+                                    <rect key="frame" x="0.0" y="371" width="369" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Vtp-qg-NLT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Transformaciones"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Transformaciones">
+                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="TransformationsButton:" destination="-1" eventType="touchUpInside" id="oSp-XD-AN0"/>
+                                        <action selector="transformationButton:" destination="-1" eventType="touchUpInside" id="hk8-zI-aNX"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Qm7-vE-jdx"/>
-                        <constraint firstAttribute="height" constant="200" id="mvW-l3-zWY"/>
+                        <constraint firstItem="sGV-fZ-ijN" firstAttribute="leading" secondItem="58N-RU-fPE" secondAttribute="leading" constant="12" id="24H-SJ-dOR"/>
+                        <constraint firstAttribute="trailing" secondItem="sGV-fZ-ijN" secondAttribute="trailing" constant="12" id="2F7-Un-4qW"/>
                     </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTU-l6-hA0">
-                    <rect key="frame" x="76.666666666666686" y="778" width="240" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="rUd-SD-h63"/>
-                        <constraint firstAttribute="width" constant="240" id="tCw-zu-T82"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Transformaciones">
-                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="TransformationsButton:" destination="-1" eventType="touchUpInside" id="TNI-cm-5yO"/>
-                        <action selector="transformationButton:" destination="-1" eventType="touchUpInside" id="mAs-Tj-vUL"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-Dx-PIm">
-                    <rect key="frame" x="32" y="298.33333333333331" width="329" height="299.99999999999994"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="J7c-ea-x8H"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7H-gV-Zdg">
-                    <rect key="frame" x="32" y="236" width="117" height="26.333333333333314"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zpu-Dx-PIm" secondAttribute="trailing" constant="32" id="ChK-QL-XZv"/>
-                <constraint firstItem="T7H-gV-Zdg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Dcr-Tg-lWb"/>
-                <constraint firstItem="Zpu-Dx-PIm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="PKe-d2-RCF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YTU-l6-hA0" secondAttribute="bottom" constant="30" id="V5E-ob-MSr"/>
-                <constraint firstItem="T7H-gV-Zdg" firstAttribute="top" secondItem="5AL-vc-TYC" secondAttribute="bottom" constant="24" id="a1M-hb-k9e"/>
-                <constraint firstItem="5AL-vc-TYC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="bi2-d7-Tcn"/>
-                <constraint firstItem="5AL-vc-TYC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lVz-X7-lcW"/>
-                <constraint firstItem="Zpu-Dx-PIm" firstAttribute="top" secondItem="T7H-gV-Zdg" secondAttribute="bottom" constant="36" id="pkX-ln-7t7"/>
-                <constraint firstItem="YTU-l6-hA0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uYy-jg-EzM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5AL-vc-TYC" secondAttribute="trailing" id="veI-KO-XCL"/>
+                <constraint firstItem="58N-RU-fPE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Q08-Gx-j22"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="58N-RU-fPE" secondAttribute="trailing" id="c7x-Rb-nUt"/>
+                <constraint firstItem="58N-RU-fPE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iTn-1e-mlq"/>
+                <constraint firstAttribute="bottom" secondItem="58N-RU-fPE" secondAttribute="bottom" constant="42" id="rfg-fw-T7d"/>
             </constraints>
-            <point key="canvasLocation" x="-11" y="-1"/>
+            <point key="canvasLocation" x="-11.450381679389313" y="-1.4084507042253522"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

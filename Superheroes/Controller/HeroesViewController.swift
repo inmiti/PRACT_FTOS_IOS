@@ -26,9 +26,11 @@ class HeroesViewController: UIViewController {
         title = "Listado de héroes"  // Titulo de viewController
         tableView.dataSource = self  // ponemos un dataSource que es self
         tableView.delegate = self  // ponemos undelegate que es self
+        tableView.isScrollEnabled = true // Habilitar scroll
+        tableView.isUserInteractionEnabled = true
         tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: HeroTableViewCell.identifier) // registramos la celda
        
-        tableView.isScrollEnabled = true
+        
 //        tableView.alwaysBounceVertical = true // desactiva el efecto de hacer scroll cuando no hay mas filas
         
         model.getHeroes { [weak self] result in
@@ -74,7 +76,8 @@ extension HeroesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let heroe = heroes[indexPath.row]
-        cell.configure(with: heroe.name, descripcion: heroe.description, url: heroe.photo)
+        cell.configure(hero: heroe.name, descripcion: heroe.description, url: heroe.photo)
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
@@ -85,7 +88,7 @@ extension HeroesViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath) {
             let heroe = heroes[indexPath.row] // parametro del que queremos el detalle, seleccionamos cual es
-            let detailViewController = DetailViewController(heroe: heroe.name) // inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
+            let detailViewController = DetailViewController(heroe: heroe.name, descripcion: heroe.description, image: heroe.photo) // inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
             
             DispatchQueue.main.async {
                 self.navigationController?.show(detailViewController, sender: nil)//para presentarlo
