@@ -131,7 +131,6 @@ final class NetworkModel {
         
         var urlComponents = URLComponents()
         urlComponents.queryItems = [URLQueryItem(name: "id", value: hero.id)]
-        print("id: \(hero.id), tipo:", type(of: hero.id))
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")

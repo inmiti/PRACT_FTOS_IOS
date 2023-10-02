@@ -11,9 +11,7 @@ class HeroTableViewCell: UITableViewCell {
     static let identifier = "HeroTableViewCell"
     
     @IBOutlet weak var heroImage: UIImageView!
-    
     @IBOutlet weak var heroNameLabel: UILabel!
-    
     @IBOutlet weak var heroDescriptionLabel: UILabel!
     
     func configure( hero: String, descripcion: String, url: URL) {

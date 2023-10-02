@@ -21,7 +21,6 @@ class HeroesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroTableViewCell") // Registra la celda personalizada HACER LUEGO
 
         title = "Listado de héroes"  // Titulo de viewController
         tableView.dataSource = self  // ponemos un dataSource que es self
@@ -88,7 +87,7 @@ extension HeroesViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath) {
             let heroe = heroes[indexPath.row] // parametro del que queremos el detalle, seleccionamos cual es
-            let detailViewController = DetailViewController(heroe: heroe.name, descripcion: heroe.description, image: heroe.photo) // inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
+            let detailViewController = DetailViewController(heroe: heroe) // inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
             
             DispatchQueue.main.async {
                 self.navigationController?.show(detailViewController, sender: nil)//para presentarlo

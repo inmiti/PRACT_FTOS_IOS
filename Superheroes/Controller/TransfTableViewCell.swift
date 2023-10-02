@@ -9,19 +9,20 @@ import UIKit
 
 class TransfTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var TransfImageView: UIImageView!
-    @IBOutlet weak var TrasfNameLabel: UILabel!
-    @IBOutlet weak var TransfDescriptionLabel: UILabel!
+    @IBOutlet weak var transfImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var transfNameLabel: UILabel!
+    
+    @IBOutlet weak var transfDescriptionLabel: UILabel!
+    
+    
+    static let identifier = "TransfTableViewCell"
+    
+    func configure( transformation: String, descripcion: String, url: URL) {
+        transfNameLabel.text = transformation
+        transfDescriptionLabel.text = descripcion
+        transfImageView.setImage(for: url)
     }
     
+
 }
