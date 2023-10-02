@@ -44,14 +44,6 @@ class TransfViewController: UIViewController {
             }
         }
     }
-    
-//    MARK: - Actions
-    
-//    @IBAction func backButton(_ sender: Any) {
-//        let viewController = DetailViewController(heroe: heroe)
-//        self.navigationController?.show(viewController, sender: nil)
-//    }
-    
 }
 
 

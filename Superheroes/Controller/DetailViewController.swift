@@ -8,21 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
 //    MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var HeroName: UILabel!
-    
     @IBOutlet weak var HeroDescription: UITextView!
-
+    @IBOutlet weak var transformationButton: UIButton!
     
 //   MARK: Variables
     private let heroe: Hero
-//    private let name: String
-//    private let descripcion: String
-//    private let image: URL
+    private let model = NetworkModel()
+    private var transformations: [Transformation] = []
     
     init(heroe: Hero) {   //para pasar el modelo de heroe al viewControler, ceamos metodo inicializador
         self.heroe = heroe
@@ -42,20 +39,34 @@ class DetailViewController: UIViewController {
         HeroName.text = heroe.name
         HeroDescription.text = heroe.description
         imageView.setImage(for: heroe.photo)
-
-    }
     
+    model.getTransformations(for: heroe) { [weak self] result in
+        switch result {
+        case .success(let transformationsList):
+            self?.transformations = transformationsList
+            DispatchQueue.main.async {
+                if self?.transformations != [] {
+                    self?.transformationButton.isHidden = false
+                } else {
+                    self?.transformationButton.isHidden = true
+                }
+            }
+        case .failure(let error):
+            print("Error: \(error)")
+        }
+    }
+}
     //MARK: - Actions
+    
     @IBAction func TransformationsButton(_ sender: Any) {
         DispatchQueue.main.async {
             let transfViewController = TransfViewController(heroe: self.heroe)
-            //            let viewControllers:[UIViewController] = [transfViewController]
-//            self.navigationController?.setViewControllers([transfViewController], animated: true)
             self.navigationController?.show(transfViewController, sender: nil)
-
         }
         }
     }
+    
+
     
 
 
