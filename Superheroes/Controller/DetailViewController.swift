@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var HeroName: UILabel!
     
     @IBOutlet weak var HeroDescription: UITextView!
-//    @IBOutlet weak var HeroDescription: UILabel!
+
     
 //   MARK: Variables
     private let heroe: String
@@ -46,15 +46,14 @@ class DetailViewController: UIViewController {
         imageView.setImage(for: image)
 
     }
-    @IBAction func TransformationsButton(_ sender: Any) {
-//        let tabBarViewController = TabBarViewController()
-//        let viewControllers:[UIViewController] = [tabBarViewController]
-//        navigationController?.setViewControllers(viewControllers, animated: true)
-//    }
+    
     //MARK: - Actions
-//    @IBAction func transformationButton(_ sender: Any) {
+    @IBAction func TransformationsButton(_ sender: Any) {
+        DispatchQueue.main.async {
+            let transfViewController = TransfViewController(heroe: self.heroe)
+            let viewControllers:[UIViewController] = [transfViewController]
+            self.navigationController?.setViewControllers(viewControllers, animated: true)}
     }
     
-   
 
 }

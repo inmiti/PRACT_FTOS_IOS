@@ -26,9 +26,9 @@ class HeroesViewController: UIViewController {
         title = "Listado de héroes"  // Titulo de viewController
         tableView.dataSource = self  // ponemos un dataSource que es self
         tableView.delegate = self  // ponemos undelegate que es self
-        tableView.isScrollEnabled = true // Habilitar scroll
-        tableView.isUserInteractionEnabled = true
-        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: HeroTableViewCell.identifier) // registramos la celda
+//        tableView.isScrollEnabled = true // Habilitar scroll
+//        tableView.isUserInteractionEnabled = true
+        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: HeroTableViewCell.identifier) // registramos la celda personalizada
        
         
 //        tableView.alwaysBounceVertical = true // desactiva el efecto de hacer scroll cuando no hay mas filas
