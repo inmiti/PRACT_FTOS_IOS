@@ -80,14 +80,11 @@ extension TransfViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath) {
             let transformation = transformations[indexPath.row] // parametro del que queremos el detalle, seleccionamos cual es
-            //            let detailTransViewController = DetailViewController(heroe: heroe) // inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
+            let detailTransViewController = TansDetailViewController(transformation: transformation)// inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
+                    DispatchQueue.main.async {
+                        self.navigationController?.show(detailTransViewController, sender: nil)//para presentarlo
+                    }
+                    tableView.deselectRow(at: indexPath, animated: true)
             
-            //            DispatchQueue.main.async {
-            //                self.navigationController?.show(detailViewController, sender: nil)//para presentarlo
-            //            }
-            //            tableView.deselectRow(at: indexPath, animated: true)
-            //
-            //    }
-        }
-    
+                }
 }

@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
         HeroDescription.text = heroe.description
         imageView.setImage(for: heroe.photo)
     
+    // Para mostrar o esconder el transformationButton:
     model.getTransformations(for: heroe) { [weak self] result in
         switch result {
         case .success(let transformationsList):
