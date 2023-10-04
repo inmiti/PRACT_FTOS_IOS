@@ -9,8 +9,7 @@ import XCTest
 @testable import Superheroes
 
 final class NetworkModelTests: XCTestCase {
-    
-    private var sut: NetworkModel!
+    private var sut: NetworkModel!  //Instancia a testear
     
     override func setUp() {   //método para inicializar sut, se ejecuta una vez por cada test que incluyamos
         super.setUp()
@@ -139,7 +138,7 @@ final class NetworkModelTests: XCTestCase {
 // OHHTTPStubs
 final class MockURLProtocol: URLProtocol {   //Sustituimos la request por este mock
     static var error: NetworkModel.NetworkError?
-    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))? 
+    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))? //request hander
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true
