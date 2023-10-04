@@ -10,11 +10,9 @@ import UIKit
 class TransfTableViewCell: UITableViewCell {
 
     @IBOutlet weak var transfImageView: UIImageView!
-    
     @IBOutlet weak var transfNameLabel: UILabel!
-    
     @IBOutlet weak var transfDescriptionLabel: UILabel!
-    
+
     
     static let identifier = "TransfTableViewCell"
     

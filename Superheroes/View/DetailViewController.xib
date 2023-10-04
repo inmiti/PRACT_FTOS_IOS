@@ -22,47 +22,47 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="58N-RU-fPE">
+                <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="58N-RU-fPE">
                     <rect key="frame" x="0.0" y="59" width="393" height="751"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-vc-TYC">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="342.66666666666669"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-vc-TYC">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="245.66666666666666"/>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-fZ-ijN">
-                            <rect key="frame" x="12" y="354.66666666666674" width="369" height="396.33333333333326"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-fZ-ijN">
+                            <rect key="frame" x="0.0" y="257.66666666666674" width="393" height="493.33333333333326"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="HeroName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soE-DH-kql">
-                                    <rect key="frame" x="0.0" y="0.0" width="369" height="28.333333333333332"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="HeroName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soE-DH-kql">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="25.333333333333332"/>
                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-S8-1FT">
-                                    <rect key="frame" x="0.0" y="40.333333333333314" width="369" height="300"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-S8-1FT">
+                                    <rect key="frame" x="0.0" y="37.333333333333314" width="393" height="400"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-JH-GJm" userLabel="HeroDescription">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="300"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-JH-GJm" userLabel="HeroDescription">
+                                            <rect key="frame" x="12" y="0.0" width="369" height="400"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" systemColor="labelColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="leading" secondItem="1Ug-zh-4lF" secondAttribute="leading" id="1fz-Va-Cdd"/>
-                                        <constraint firstAttribute="height" constant="300" id="C8U-pO-gep"/>
+                                        <constraint firstItem="Ren-JH-GJm" firstAttribute="leading" secondItem="1Ug-zh-4lF" secondAttribute="leading" constant="12" id="1fz-Va-Cdd"/>
+                                        <constraint firstAttribute="height" constant="400" id="C8U-pO-gep"/>
                                         <constraint firstItem="1Ug-zh-4lF" firstAttribute="bottom" secondItem="Ren-JH-GJm" secondAttribute="bottom" id="EcW-65-KOF"/>
                                         <constraint firstItem="Ren-JH-GJm" firstAttribute="top" secondItem="1Ug-zh-4lF" secondAttribute="top" id="JaX-Cn-OyB"/>
                                         <constraint firstItem="Ren-JH-GJm" firstAttribute="centerY" secondItem="bE8-S8-1FT" secondAttribute="centerY" id="Qme-4c-0YJ"/>
                                         <constraint firstItem="Ren-JH-GJm" firstAttribute="centerX" secondItem="bE8-S8-1FT" secondAttribute="centerX" id="aYm-M4-yBd"/>
-                                        <constraint firstItem="1Ug-zh-4lF" firstAttribute="trailing" secondItem="Ren-JH-GJm" secondAttribute="trailing" id="oaq-1S-cWX"/>
+                                        <constraint firstItem="1Ug-zh-4lF" firstAttribute="trailing" secondItem="Ren-JH-GJm" secondAttribute="trailing" constant="-12" id="oaq-1S-cWX"/>
                                     </constraints>
                                     <viewLayoutGuide key="contentLayoutGuide" id="1Ug-zh-4lF"/>
                                     <viewLayoutGuide key="frameLayoutGuide" id="r0i-P0-lcg"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-Vt-yD4">
-                                    <rect key="frame" x="0.0" y="352.33333333333331" width="369" height="44"/>
+                                    <rect key="frame" x="0.0" y="449.33333333333331" width="393" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="Vtp-qg-NLT"/>
                                     </constraints>
@@ -79,10 +79,6 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="sGV-fZ-ijN" firstAttribute="leading" secondItem="58N-RU-fPE" secondAttribute="leading" constant="12" id="24H-SJ-dOR"/>
-                        <constraint firstAttribute="trailing" secondItem="sGV-fZ-ijN" secondAttribute="trailing" constant="12" id="2F7-Un-4qW"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
