@@ -8,6 +8,7 @@
 import Foundation
 
 final class NetworkModel {
+    
     enum NetworkError: Error {
         case unknown
         case malformedUrl
@@ -17,7 +18,7 @@ final class NetworkModel {
         case statusCode(code: Int?)
         case noToken
     }
-    
+    // - MARK: Variables e inicializador
     private var baseComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "https"
@@ -25,23 +26,25 @@ final class NetworkModel {
         return components
     }
     private var token: String? {
-        get {   // Cuando se obtiene el token...
+        get {
             if let token = LocalDataModel.getToken() {
                 return token
             }
             return nil
         }
-        set {  // Cuando obtenemos el valor del token no nil ....
+        set {
             if let token = newValue {
                 LocalDataModel.save(token: token)
             }
         }
     }
-    private let session: URLSession  // Creamos esta coonstante y el inicializador para poder inyectar en los test el MockURLProtocol
-    init(session:URLSession = .shared) { //De forma predeterminada será URLSession.shared
+    private let session: URLSession
+    
+    init(session:URLSession = .shared) {
         self.session = session
     }
     
+    // - MARK: Método login
     func login(
         user:String,
         password: String,
@@ -53,7 +56,7 @@ final class NetworkModel {
             completion(.failure(.malformedUrl))
             return
         }
-        let loginString = String(format: "%@:%@", user, password) // user:password
+        let loginString = String(format: "%@:%@", user, password)
         guard let loginData = loginString.data(using: .utf8) else {
             completion(.failure(.deCodingFailed))
             return
@@ -88,31 +91,33 @@ final class NetworkModel {
         task.resume()
     }
     
+    // - MARK: Método getHeroes
     func getHeroes(
                    completion: @escaping (Result<[Hero], NetworkError>) -> Void) {
         
         var components = baseComponents
-        components.path = "/api/heros/all"  // construimos url con path
+        components.path = "/api/heros/all"
         
-        guard let url = components.url else {   //comprobamos que la url está ok, en ese caso da un array vacío
-            completion(.failure(.malformedUrl))       // si no está bien formada la url pasamos el error
+        guard let url = components.url else {
+            completion(.failure(.malformedUrl))
             return
         }
-        guard let token else {  // Comprobación de que hay un token, si no lo hubiera da un error.
+        guard let token else {
             completion(.failure(.noToken))
             return
         }
         
-        var urlComponents = URLComponents()   //Me ayuda a construir la url
-        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]  // propiedad queryItems va a ser un array de un tipo urlqueryitem, el cual le damos el body que espera la api: name: "" para poder obtener todos los heroes
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"  //Le damos el tipo de metodo, en nuestra api es un POST
-        request.httpBody = urlComponents.query?.data(using: .utf8) // httpBody espera un data, por eso le pasamos .data query hace composicion de todas las query pasadas, en nuestro caso es solo 1
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")// Pasar header a nuestra request para autentificarnos
+        request.httpMethod = "POST"
+        request.httpBody = urlComponents.query?.data(using: .utf8)
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         createTask(for: request , using: [Hero].self, completion: completion)
     }
     
+    // - MARK: Método getTransformations
     func getTransformations(for hero: Hero,
                             completion: @escaping (Result<[Transformation], NetworkError>) -> Void)
     {
@@ -141,16 +146,17 @@ final class NetworkModel {
             completion: completion)
     }
     
+    // - MARK: Método createTask
     func createTask<T: Decodable> (
         for request: URLRequest,
-        using type: T.Type, // Importante pasar .Type para que nos de el tipo, si no lo indicamos nos da la referencia al objeto.
+        using type: T.Type,
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {
         let task = session.dataTask(with: request) {data, response, error in
             let result: Result<T, NetworkError>
             
             defer {
-                completion(result)   // es lo ultimo, ejecuta el completion  con el .success.
+                completion(result) 
             }
             guard error == nil else {
                 result = .failure(.unknown)

@@ -14,18 +14,18 @@ class TansDetailViewController: UIViewController {
     @IBOutlet weak var transfNameLabel: UILabel!
     @IBOutlet weak var transfDescriptionLabel: UITextView!
     
+    // - MARK: Constantes
     let transformation: Transformation
     
-    init(transformation: Transformation) {   //para pasar el modelo de transformación al viewControler, ceamos metodo inicializador
+    init(transformation: Transformation) {
         self.transformation = transformation
-        super.init(nibName: nil, bundle: nil)  // el sabe el viewController que es TransDetailViewController, el paquete tambien lo sabe
+        super.init(nibName: nil, bundle: nil)
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     
     // MARK: - Livecycle

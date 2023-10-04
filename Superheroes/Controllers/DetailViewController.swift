@@ -10,7 +10,6 @@ import UIKit
 class DetailViewController: UIViewController {
     
 //    MARK: - Outlets
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var HeroName: UILabel!
     @IBOutlet weak var HeroDescription: UITextView!
@@ -21,9 +20,9 @@ class DetailViewController: UIViewController {
     private let model = NetworkModel()
     private var transformations: [Transformation] = []
     
-    init(heroe: Hero) {   //para pasar el modelo de heroe al viewControler, ceamos metodo inicializador
+    init(heroe: Hero) {
         self.heroe = heroe
-        super.init(nibName: nil, bundle: nil)  // el sabe el viewController que es DetailViewController, el paquete tambien lo sabe
+        super.init(nibName: nil, bundle: nil)
     }
     
     @available(*, unavailable)
@@ -32,7 +31,6 @@ class DetailViewController: UIViewController {
     }
     
 //    MARK: Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = heroe.name
@@ -40,7 +38,7 @@ class DetailViewController: UIViewController {
         HeroDescription.text = heroe.description
         imageView.setImage(for: heroe.photo)
     
-    // Para mostrar o esconder el transformationButton:
+    // Mostrar o esconder transformationsButton:
     model.getTransformations(for: heroe) { [weak self] result in
         switch result {
         case .success(let transformationsList):
@@ -58,7 +56,6 @@ class DetailViewController: UIViewController {
     }
 }
     //MARK: - Actions
-    
     @IBAction func TransformationsButton(_ sender: Any) {
         DispatchQueue.main.async {
             let transfViewController = TransfViewController(heroe: self.heroe)

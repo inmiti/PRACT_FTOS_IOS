@@ -9,16 +9,18 @@ import UIKit
 
 class TransfViewController: UIViewController {
     
+    // - MARK: Outlets
     @IBOutlet weak var TransfTableView: UITableView!
     
+    // - MARK: Variables
     private let model = NetworkModel()
     private let heroe: Hero
     private var transformations: [Transformation] = []
     
     
-    init(heroe: Hero) {   //para pasar el modelo de heroe al viewControler, ceamos metodo inicializador
+    init(heroe: Hero) {
         self.heroe = heroe
-        super.init(nibName: nil, bundle: nil)  // el sabe el viewController que es DetailViewController, el paquete tambien lo sabe
+        super.init(nibName: nil, bundle: nil)
     }
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -27,10 +29,10 @@ class TransfViewController: UIViewController {
 //    MARK: - LiveCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Transformaciones"  // Titulo de viewController
-        TransfTableView.dataSource = self  // ponemos un dataSource que es self
-        TransfTableView.delegate = self  // ponemos undelegate que es self
-        TransfTableView.register(UINib(nibName: "TransfTableViewCell", bundle: nil), forCellReuseIdentifier: TransfTableViewCell.identifier) // registramos la celda personalizada
+        title = "Transformaciones"
+        TransfTableView.dataSource = self
+        TransfTableView.delegate = self
+        TransfTableView.register(UINib(nibName: "TransfTableViewCell", bundle: nil), forCellReuseIdentifier: TransfTableViewCell.identifier)
         
         model.getTransformations(for: heroe) { [weak self] result in
             switch result {
@@ -79,12 +81,11 @@ extension TransfViewController: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath) {
-            let transformation = transformations[indexPath.row] // parametro del que queremos el detalle, seleccionamos cual es
-            let detailTransViewController = TansDetailViewController(transformation: transformation)// inicializar la vista de detalle, la subclase, inyectando el parametro en cuestion
+            let transformation = transformations[indexPath.row]
+            let detailTransViewController = TansDetailViewController(transformation: transformation)
                     DispatchQueue.main.async {
-                        self.navigationController?.show(detailTransViewController, sender: nil)//para presentarlo
+                        self.navigationController?.show(detailTransViewController, sender: nil)
                     }
                     tableView.deselectRow(at: indexPath, animated: true)
-            
-                }
+    }
 }
