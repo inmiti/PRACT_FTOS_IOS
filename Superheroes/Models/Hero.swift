@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hero: Decodable {
+struct Hero: Decodable, Equatable {
     let id: String
     let name: String
     let description: String

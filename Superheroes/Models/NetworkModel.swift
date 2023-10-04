@@ -38,7 +38,7 @@ final class NetworkModel {
         }
     }
     private let session: URLSession  // Creamos esta coonstante y el inicializador para poder inyectar en los test el MockURLProtocol
-    init(session:URLSession = .shared) {
+    init(session:URLSession = .shared) { //De forma predeterminada será URLSession.shared
         self.session = session
     }
     
