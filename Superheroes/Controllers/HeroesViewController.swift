@@ -71,10 +71,7 @@ extension HeroesViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath) {
             let heroe = heroes[indexPath.row]
             let detailViewController = DetailViewController(heroe: heroe)
-            
-            DispatchQueue.main.async {
-                self.navigationController?.show(detailViewController, sender: nil)
-            }
+            navigationController?.show(detailViewController, sender: nil)
             tableView.deselectRow(at: indexPath, animated: true)
             
     }

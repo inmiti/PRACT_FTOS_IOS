@@ -83,9 +83,7 @@ extension TransfViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath) {
             let transformation = transformations[indexPath.row]
             let detailTransViewController = TansDetailViewController(transformation: transformation)
-                    DispatchQueue.main.async {
-                        self.navigationController?.show(detailTransViewController, sender: nil)
-                    }
+            navigationController?.show(detailTransViewController, sender: nil)
                     tableView.deselectRow(at: indexPath, animated: true)
     }
 }

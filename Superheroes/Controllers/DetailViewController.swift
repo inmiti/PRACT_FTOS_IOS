@@ -57,10 +57,8 @@ class DetailViewController: UIViewController {
 }
     //MARK: - Actions
     @IBAction func TransformationsButton(_ sender: Any) {
-        DispatchQueue.main.async {
             let transfViewController = TransfViewController(heroe: self.heroe)
-            self.navigationController?.show(transfViewController, sender: nil)
-        }
+            navigationController?.show(transfViewController, sender: nil)
         }
     }
     

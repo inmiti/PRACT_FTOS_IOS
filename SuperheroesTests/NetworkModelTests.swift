@@ -96,11 +96,10 @@ final class NetworkModelTests: XCTestCase {
     }
 ]
 """
-        
-       
+
         let token = "SomeToken"
         var heroes = [Hero]()
-        
+
         MockURLProtocol.requestHandler = { request in
             XCTAssertEqual(request.httpMethod, "POST")
             XCTAssertEqual(
@@ -116,23 +115,20 @@ final class NetworkModelTests: XCTestCase {
             return (response, data)
         }
         let expectation = expectation(description: "Heroes have been successfully get")
-        
-        sut.getHeroes {
-            result in
+
+        sut.getHeroes { result in
             guard case let .success(heroesGet) = result else {
                 XCTFail("Expected success but received \(result)")
                 return
             }
             heroes =  heroesGet
-            
+
             expectation.fulfill()
         }
-        
+
         wait(for: [expectation], timeout: 1 )
         XCTAssertEqual(heroes[3].name, "Goku")
-        
     }
- 
 }
 
 // OHHTTPStubs
